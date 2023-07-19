@@ -12,6 +12,8 @@
     'category': "Custom Modules/Space Mission",
     "depends": ['base'] ,
     'data': [],
-    'demo': [],
+    'demo': [
+        'demo/space_ship_demo.xml',
+    ],
     'application': True,
 }
