@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data noupdate='1'>
+        <record id="space_ship01" model="spaceship.spaceship">
+            <field name="name">Kia102</field>
+            <field name="type">transport</field>
+            <field name="model">Space Shuttle</field>
+            <field name="build_date">2010-01-09</field>
+            <field name="captain">Johan Sebastian Mastropiero</field>
+            <field name="required_crew">4</field>
+            <field name="length">56.1</field>
+            <field name="width">8.69</field>
+            <field name="height">8.69</field>
+            <field name="engine_number">11009921</field>
+            <field name="fuel_type">liquid_fuel</field>
+            <field name="max_weight">1750</field>
+            
+        </record>
+        <record id="space_ship02" model="spaceship.spaceship">
+            <field name="name">Suzuki103</field>
+            <field name="type">scout_ship</field>
+            <field name="model">Space Shuttle</field>
+            <field name="build_date">2015-10-09</field>
+            <field name="captain">Krugger Fistche</field>
+            <field name="length">45.1</field>
+            <field name="width">7.39</field>
+            <field name="height">7.39</field>
+            <field name="engine_number">11789921</field>
+            <field name="fuel_type">solid_fuel</field>
+            <field name="max_weight">1150</field>
+            
+        </record>
+        <record id="space_ship03" model="spaceship.spaceship">
+            <field name="name">Picanto202</field>
+            <field name="type">fighter</field>
+            <field name="model">Space Shuttle</field>
+            <field name="build_date">2020-09-05</field>
+            <field name="captain">Kang Lho</field>
+            <field name="required_crew">3</field>
+            <field name="length">32.1</field>
+            <field name="width">4.69</field>
+            <field name="height">4.69</field>
+            <field name="engine_number">11009000</field>
+            <field name="fuel_type">liquid_fuel</field>
+            <field name="max_weight">950</field>
+            
+        </record>
+      
+    </data>
+</odoo>
