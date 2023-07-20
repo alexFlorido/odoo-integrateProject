@@ -11,7 +11,13 @@
     'website': 'www.odoo.com',
     'category': "Custom Modules/Space Mission",
     "depends": ['base'] ,
-    'data': [],
+    'data': [
+        'security/spaceship_groups.xml',
+        'security/ir.model.access.csv',
+        'security/spaceship_security.xml',
+        'views/space_ship_menuitems.xml',
+        'views/spaceship_views.xml',
+    ],
     'demo': [
         'demo/space_ship_demo.xml',
     ],
