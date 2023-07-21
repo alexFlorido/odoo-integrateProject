@@ -30,6 +30,8 @@ class Spaceship(models.Model):
                                  ], copy=False)
     max_weight = fields.Float(string="Max Weight", digits="12,2")
 
+    mission_ids = fields.One2many(comodel_name="spacemission.mission", string="Session", inverse_name="spaceship_id")
+
 
     @api.constrains('width','length')
     def _check_length(self):
@@ -38,8 +40,4 @@ class Spaceship(models.Model):
                 raise ValidationError('The width of the ship can not be more longer than the lenght.')
 
 
-    # @api.constrains('width', 'length')
-    # def _check_length(self):
-    #     for spaceship in self:
-    #         if(spaceship.width >= spaceship.length):
-    #             raise ValidationError('The width of the ship can not be more longer than the lenght.')
+   

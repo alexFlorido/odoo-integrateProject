@@ -10,7 +10,7 @@ class Mission(models.Model):
     name = fields.Char(string="Mission Tittle")
 
     mission_number =  fields.Char(string="Mission Number",
-                                  default="M0000", copy=False, required=True, readonly=True)
+                                  default="M0000", copy=False, readonly=True)
     
     spaceship_id = fields.Many2one(comodel_name="spacemission.spaceship", string="Space Ship", ondelete="cascade", required=True)
     crew_ids = fields.Many2many(comodel_name="res.partner", string="Space Ship Crew")
@@ -19,15 +19,15 @@ class Mission(models.Model):
     return_date = fields.Datetime(string='Return Date', required=True)
     duration = fields.Integer(string="Space Mission Duration", compute="_compute_mission_duration", inverse="_inverse_mission_duration", readonly=False)
 
-    spaceship_model = fields.Char(related="spaceship_id.model", readonly=True)
-    spaceship_required_crew = fields.Char(related="spaceship_id.required_crew", readonly=True)
+    spaceship_model = fields.Char(related="spaceship_id.model")
+    spaceship_required_crew = fields.Integer(related="spaceship_id.required_crew")
 
     
     
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            if vals.get('mission_number', ('S0000')) == ('S0000'):
+            if vals.get('mission_number', ('M0000')) == ('M0000'):
                 vals['mission_number'] = self.env['ir.sequence'].next_by_code('mission.number')
         return super().create(vals_list)
     

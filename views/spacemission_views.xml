@@ -4,7 +4,7 @@
         <field name="name">mission.view.form</field>
         <field name="model">spacemission.mission</field>
         <field name="arch" type="xml">
-            <form string="Course View">
+            <form string="Mission View">
                 <header></header>
                 <sheet>
                     <h1> <label string="Space Mission" for="name"/><field name='name'/></h1>
@@ -14,8 +14,8 @@
                             <separator string="Space Ship to Mission"/>
                             <field name="spaceship_id"/>
                             <field name="spaceship_model"/>
-                            <laber string="This Ship need at least: " for="required_crew"/>
-                            <field name='required_crew'/>
+                            <laber string="This Ship need at least: " for="spaceship_required_crew"/>
+                            <field name='spaceship_required_crew'/>
                         </group>
                         <group>
                             <separator string="Mission"/>
@@ -33,7 +33,7 @@
         <field name="name">mission.view.list</field>
         <field name="model">spacemission.mission</field>
         <field name="arch" type="xml">
-            <tree string="Course List">
+            <tree string="Mission List">
                 <field name="mission_number"/>
                 <field name="name"/>
                 <field name="release_date"/>

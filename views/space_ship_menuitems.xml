@@ -25,7 +25,7 @@
         <menuitem id="menu_spaceship_sub" name="Space Ship" sequence="1">
             <!-- En este menu item debe ir el ID del MODELO a utilizar en este caso era spacemission.spaceship y se reemplaza el . por _ -->
             <menuitem id="menu_spacemission_spaceship" name="Space Ships" sequence="2" action="spaceship_list_action"/>
-            <menuitem id="menu_spacemission_mission" name="Space Missions" sequence="2" action="mission_list_action"/>
+            <menuitem id="menu_spacemission_mission" name="Space Missions" sequence="3" action="mission_list_action"/>
         </menuitem>
     </menuitem>
 </odoo>
