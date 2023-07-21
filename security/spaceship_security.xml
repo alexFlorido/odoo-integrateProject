@@ -3,7 +3,7 @@
     <data noupdate="1">
         <record id="only_active_modify" model="ir.rule">
             <field name="name">Only active Ships can be modified</field>    
-            <field name="model_id" ref="model_spacemision_spaceship"/>
+            <field name="model_id" ref="model_spacemission_spaceship"/>
             <field name="domain_force">[('active','=',True)]</field>
             <field name="perm_read">0</field>
             <field name="perm_write">1</field>

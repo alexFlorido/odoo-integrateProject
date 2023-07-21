@@ -2,7 +2,7 @@
 <odoo>
     <record id="spaceship_view_form" model="ir.ui.view">
         <field name="name">spaceship.view.form</field>
-        <field name="model">spacemision.spaceship</field>
+        <field name="model">spacemission.spaceship</field>
         <field name="arch" type="xml">
             <form string="Course View">
                 <header></header>
@@ -44,7 +44,7 @@
     </record>
     <record id="spaceship_view_list" model="ir.ui.view">
         <field name="name">spaceship.view.list</field>
-        <field name="model">spacemision.spaceship</field>
+        <field name="model">spacemission.spaceship</field>
         <field name="arch" type="xml">
             <tree string="Course List">
                 <field name="name"/>
@@ -60,7 +60,7 @@
 
     <record id="spaceship_view_search" model="ir.ui.view">
         <field name="name">spaceship.view.search</field>
-        <field name="model">spacemision.spaceship</field>
+        <field name="model">spacemission.spaceship</field>
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>

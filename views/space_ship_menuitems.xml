@@ -2,7 +2,7 @@
 <odoo>
     <record id="spaceship_list_action" model="ir.actions.act_window">
         <field name="name">Space Ship List</field>
-        <field name="res_model">spacemision.spaceship</field>
+        <field name="res_model">spacemission.spaceship</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -10,11 +10,22 @@
             </p>
         </field>
     </record>
+    <record id="mission_list_action" model="ir.actions.act_window">
+        <field name="name">Space Mission List</field>
+        <field name="res_model">spacemission.mission</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first Space Mission
+            </p>
+        </field>
+    </record>
 
     <menuitem name="Space Ship" id="menu_spaceship" sequence="1">
         <menuitem id="menu_spaceship_sub" name="Space Ship" sequence="1">
-            <!-- En este menu item debe ir el ID del MODELO a utilizar en este caso era spacemision.spaceship y se reemplaza el . por _ -->
-            <menuitem id="menu_spacemision_spaceship" name="Space Ships" sequence="2" action="spaceship_list_action"/>
+            <!-- En este menu item debe ir el ID del MODELO a utilizar en este caso era spacemission.spaceship y se reemplaza el . por _ -->
+            <menuitem id="menu_spacemission_spaceship" name="Space Ships" sequence="2" action="spaceship_list_action"/>
+            <menuitem id="menu_spacemission_mission" name="Space Missions" sequence="2" action="mission_list_action"/>
         </menuitem>
     </menuitem>
 </odoo>

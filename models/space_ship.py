@@ -2,7 +2,7 @@ from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
 class Spaceship(models.Model):
-    _name = "spacemision.spaceship"
+    _name = "spacemission.spaceship"
     _desciption = "Space Ship info"
 
     name = fields.Char(string="Name", required=True)
