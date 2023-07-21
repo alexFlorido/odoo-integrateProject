@@ -24,16 +24,27 @@
                     </group>
                     <notebook>
                         <page string="Specifications Ship">
-                            <separator string="Dimensions"/>
-                            <label string="Ship Width" for="width"/>
-                            <field name="width"/>
-                            <label string="Ship Length" for="length"/>
-                            <field name="length"/>
-                            <separator string="Engine"/>
-                            <label string="Engine Number" for="engine_number"/>
-                            <field name="engine_number"/>
-                            <label string="Select Fuel Type" for="fuel_type"/>
-                            <field name="fuel_type"/>
+                            <group>  
+                                <group>
+                                    <separator string="Dimensions"/>
+                                    <field name="width"/>
+                                    <field name="height"/>
+                                    <field name="length"/>
+                                 </group> 
+                                <group>
+                                    <separator string="Engine"/>
+                                    <field name="engine_number"/>
+                                    <label string="Select Fuel Type" for="fuel_type"/>
+                                    <field name="fuel_type" nolabel="1"/>
+                                    <label string="This is the Max Fuel Capacity" for="fuel_capacity"/>
+                                    <field name="fuel_capacity" nolabel="1"/>
+                                    <field name="n_engines"/>
+                                </group>                                                      
+                            </group>
+                        </page>
+                        <page string="Security Features">
+                            <separator string="Write below"/>
+                            <field name="security_features"/>
                         </page>
                     </notebook>
 
@@ -53,6 +64,7 @@
                 <field name="captain"/>
                 <field name="build_date"/>
                 <field name="fuel_type"/>
+                <field name="fuel_capacity"/>
                 <field name="create_date" optional="hide"/>
             </tree>
         </field>

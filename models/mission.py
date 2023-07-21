@@ -21,6 +21,9 @@ class Mission(models.Model):
 
     spaceship_model = fields.Char(related="spaceship_id.model")
     spaceship_required_crew = fields.Integer(related="spaceship_id.required_crew")
+    spaceship_fuel_capacity = fields.Float(related="spaceship_id.fuel_capacity")
+
+    required_fuel = fields.Float(string="Required Fuel", compute="_compute_required_fuel", readonly=False)
 
     
     
@@ -31,6 +34,18 @@ class Mission(models.Model):
                 vals['mission_number'] = self.env['ir.sequence'].next_by_code('mission.number')
         return super().create(vals_list)
     
+
+    @api.constrains('required_fuel')
+    def _check_required_fuel(self):
+        for mission in self:
+            if(mission.spaceship_fuel_capacity < mission.required_fuel):
+                raise ValidationError('The Ship that you choose have not the required fuel for the mission please select other Ship')
+    
+    @api.depends('spaceship_fuel_capacity')
+    def _compute_required_fuel(self):
+        for record in self:
+            if record.spaceship_fuel_capacity:
+                record.required_fuel = record.spaceship_fuel_capacity
 
     @api.constrains('release_date', 'return_date')
     def _check_end_date(self):

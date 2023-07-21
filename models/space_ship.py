@@ -30,7 +30,13 @@ class Spaceship(models.Model):
                                  ], copy=False)
     max_weight = fields.Float(string="Max Weight", digits="12,2")
 
-    mission_ids = fields.One2many(comodel_name="spacemission.mission", string="Session", inverse_name="spaceship_id")
+    mission_ids = fields.One2many(comodel_name="spacemission.mission", string="Mission", inverse_name="spaceship_id")
+
+    fuel_capacity = fields.Float(string="Fuel Capacity", digits="12,2", compute="_compute_fuel_capacity_and_n_of_engines")
+    n_engines = fields.Integer(string="Number of Engines", compute="_compute_fuel_capacity_and_n_of_engines")
+    security_features =  fields.Text()
+
+
 
 
     @api.constrains('width','length')
@@ -38,6 +44,22 @@ class Spaceship(models.Model):
         for spaceship in self:
             if (spaceship.width > spaceship.length):
                 raise ValidationError('The width of the ship can not be more longer than the lenght.')
+            
+    @api.depends("type")
+    def _compute_fuel_capacity_and_n_of_engines(self):
+        for record in self:
+            if(record.type == "freighter"):
+                record.fuel_capacity = 125000
+                record.n_engines = 4
+            elif(record.type == "transport"):
+                record.fuel_capacity = 70000
+                record.n_engines = 4
+            elif(record.type == "scout_ship"):
+                record.fuel_capacity = 85000
+                record.n_engines = 3
+            else:
+                record.fuel_capacity = 25000
+                record.n_engines = 2
 
 
    

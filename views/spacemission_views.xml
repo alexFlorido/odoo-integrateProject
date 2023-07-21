@@ -14,11 +14,13 @@
                             <separator string="Space Ship to Mission"/>
                             <field name="spaceship_id"/>
                             <field name="spaceship_model"/>
+                            <field name="spaceship_fuel_capacity" />
                             <laber string="This Ship need at least: " for="spaceship_required_crew"/>
                             <field name='spaceship_required_crew'/>
                         </group>
                         <group>
                             <separator string="Mission"/>
+                            <field name="required_fuel"/>
                             <field name="release_date"/>
                             <field name="return_date"/>
                             <field name="duration"/>
@@ -58,6 +60,19 @@
                 </group>
                 
             </search>
+        </field>
+    </record>
+    <record id="mission_view_calendar" model="ir.ui.view">
+        <field name="name">mission.view.calendar</field>
+        <field name="model">spacemission.mission</field>
+        <field name="arch" type="xml">
+            <calendar string="Session Calendar"
+                      date_start="release_date"
+                      date_stop="return_date"
+                      color="spaceship_id"
+                      mode="month">
+                <field name="spaceship_id" filters="1"/>
+            </calendar>
         </field>
     </record>
 </odoo>
