@@ -7,8 +7,8 @@
             <form string="Course View">
                 <header></header>
                 <sheet>
-                    <h1><field name='name'/></h1>
-                    <h3><field name="model"/></h3>
+                    <h1> <label string="Ship Name" for="name"/><field name='name'/></h1>
+                    <h3> <label string="Ship Model" for="model"/><field name="model"/></h3>
                     <group>
                         <group>
                             <separator string="Screw Ship Members"/>
@@ -25,10 +25,14 @@
                     <notebook>
                         <page string="Specifications Ship">
                             <separator string="Dimensions"/>
-                            <field name="length"/>
+                            <label string="Ship Width" for="width"/>
                             <field name="width"/>
+                            <label string="Ship Length" for="length"/>
+                            <field name="length"/>
                             <separator string="Engine"/>
+                            <label string="Engine Number" for="engine_number"/>
                             <field name="engine_number"/>
+                            <label string="Select Fuel Type" for="fuel_type"/>
                             <field name="fuel_type"/>
                         </page>
                     </notebook>

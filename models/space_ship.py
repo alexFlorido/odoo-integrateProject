@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 class Spaceship(models.Model):
     _name = "spacemision.spaceship"
@@ -18,8 +19,8 @@ class Spaceship(models.Model):
     build_date = fields.Date(string="Build Date")
     captain = fields.Char(string="Captain Name")
     required_crew = fields.Integer(string="Required Crew", default="3")
-    length = fields.Float(string="Leght", digits="12,2")
-    width = fields.Float(string="Width", digits="12,2")
+    length = fields.Float(string="Leght", digits="12,2", required=True)
+    width = fields.Float(string="Width", digits="12,2", required=True)
     height = fields.Float(string="Height", digits="12,2")
     engine_number = fields.Char(string="Engine Number")
     fuel_type = fields.Selection(string="Fueltype", 
@@ -28,3 +29,17 @@ class Spaceship(models.Model):
                                 ('liquid_fuel', "Liquid Fuel"),
                                  ], copy=False)
     max_weight = fields.Float(string="Max Weight", digits="12,2")
+
+
+    @api.constrains('width','length')
+    def _check_length(self):
+        for spaceship in self:
+            if (spaceship.width > spaceship.length):
+                raise ValidationError('The width of the ship can not be more longer than the lenght.')
+
+
+    # @api.constrains('width', 'length')
+    # def _check_length(self):
+    #     for spaceship in self:
+    #         if(spaceship.width >= spaceship.length):
+    #             raise ValidationError('The width of the ship can not be more longer than the lenght.')
