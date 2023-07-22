@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record model="ir.ui.view" id="spacemission_project_wizard_form_view">
+            <field name="name">spacemission.project.wizard.form</field>
+            <field name="model">spacemission.project.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create Project for Mission">
+                    <group>
+                        <field name="project_title"/>
+                        <field name="mission_id" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="create_project" type="object" string="Create" class="oe_highlight"/>
+                        
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+
+        </record>
+
+        <act_window id="lauch_project_wizard"
+                    name="Create Projecto Mission"
+                    binding_model="spacemission.mission"
+                    res_model="spacemission.project.wizard"
+                    view_mode="form"
+                    target="new"/>
+    </data>
+    
+
+</odoo>

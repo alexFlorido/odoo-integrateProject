@@ -5,3 +5,6 @@ spaceship_user,spaceship user,model_spacemission_spaceship,,1,0,0,0
 mission_admin,mission admin,model_spacemission_mission,group_spaceship_admin,1,1,1,1
 mission_crewmember,mission crewmember,model_spacemission_mission,group_spaceship_crewmember,1,1,1,0
 mission_user,mission user,model_spacemission_mission,,1,0,0,0
+project_wizard_admin,project admin,model_spacemission_project_wizard,group_spaceship_admin,1,1,1,1
+project_wizard_user,project crewmember,model_spacemission_project_wizard,group_spaceship_crewmember,1,1,1,0
+project_wizard_read_all,project user,model_spacemission_project_wizard,,1,0,0,0

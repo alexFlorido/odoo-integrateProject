@@ -24,6 +24,7 @@ class Mission(models.Model):
     spaceship_fuel_capacity = fields.Float(related="spaceship_id.fuel_capacity")
 
     required_fuel = fields.Float(string="Required Fuel", compute="_compute_required_fuel", readonly=False)
+    project_ids = fields.One2many(comodel_name="project.project", string="Projects", inverse_name="mission_id")
 
     
     

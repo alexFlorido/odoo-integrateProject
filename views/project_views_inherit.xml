@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_project_form_inherit_spacemission">
+            <field name="name">project.project.form.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <label for="mission_id">Related Mission</label>
+                    <field name="mission_id"/>
+                </field>
+                              
+            </field>
+        </record>
+    </data>
+</odoo>

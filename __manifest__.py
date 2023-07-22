@@ -10,7 +10,7 @@
     'author': "alexFlorido",
     'website': 'www.odoo.com',
     'category': "Custom Modules/Space Mission",
-    "depends": ['base'] ,
+    "depends": ['project'] ,
     'data': [
         'security/spaceship_groups.xml',
         'security/ir.model.access.csv',
@@ -19,6 +19,8 @@
         'views/space_ship_menuitems.xml',
         'views/spaceship_views.xml',
         'views/spacemission_views.xml',
+        'views/project_views_inherit.xml',
+        'wizard/project_wizard_view.xml',
     ],
     'demo': [
         'demo/space_ship_demo.xml',
