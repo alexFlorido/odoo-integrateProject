@@ -21,6 +21,8 @@
         'views/spacemission_views.xml',
         'views/project_views_inherit.xml',
         'wizard/project_wizard_view.xml',
+        'report/mission_report_templates.xml',
+        'views/spacemission_web_templates.xml'
     ],
     'demo': [
         'demo/space_ship_demo.xml',

@@ -15,8 +15,8 @@ class Mission(models.Model):
     spaceship_id = fields.Many2one(comodel_name="spacemission.spaceship", string="Space Ship", ondelete="cascade", required=True)
     crew_ids = fields.Many2many(comodel_name="res.partner", string="Space Ship Crew")
     
-    release_date = fields.Datetime(string='Release Date', required=True)
-    return_date = fields.Datetime(string='Return Date', required=True)
+    release_date = fields.Datetime(string='Release Date')
+    return_date = fields.Datetime(string='Return Date')
     duration = fields.Integer(string="Space Mission Duration", compute="_compute_mission_duration", inverse="_inverse_mission_duration", readonly=False)
 
     spaceship_model = fields.Char(related="spaceship_id.model")
